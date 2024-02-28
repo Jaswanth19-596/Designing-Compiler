@@ -1,0 +1,23 @@
+(* comments *)  
+fun square (int x)=x*x; 
+if i > j then 1 else 2 ; 
+
+bool x = false;
+
+int x=-2;
+
+int x=2l; 
+
+long x12=2L; 
+
+{
+double i,j; 
+
+i+=j;
+}
+char c = "a";
+ 
+i-j=3;
+
+
+fun isWeekend x = (x = Sa orelse x = Su);
