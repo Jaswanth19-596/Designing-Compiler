@@ -1,5 +1,7 @@
-import ply.lex as lex
+# import ply.lex as lex
 from ply.lex import TOKEN
+from ply import lex
+from ply.yacc import yacc
 
 # List of token names.   This is always required
 tokens = (
@@ -135,6 +137,9 @@ def t_error(t):
 
 # Build the lexer
 lexer = lex.lex()
+# parser = yacc.yacc()
+
+
 
 inputFile = open('input.txt', 'r')
 
@@ -142,32 +147,33 @@ data = inputFile.read()
 
 inputFile.close()
 # Test it out
-# data = '''
-#     (* comments *)  
-# fun sq (int x)=x*x; 
-# if i > j then 1 else 2 ; 
+data = '''
+    (* comments *)  
+fun sq (int x)=x*x; 
+if i > j then 1 else 2 ; 
 
-# bool x = false;
+bool x = false;
 
-# int x=-2;
+int x=-2;
 
-# int x=2l; 
+int x=2l; 
 
-# long x12=2L; 
+long x12=2L; 
 
-# {
-# double i,j; 
+{
+double i,j; 
 
-# i+=j;
-# }
-# char c = "a";
+i+=j;
+}
+char c = "a";
  
-# i-j=3;
+i-j=3;
 
+int a = 2.;
 
-# fun isWeekend x = (x = Sa orelse x = Su);
+fun isWeekend x = (x = Sa orelse x = Su);
 
-# '''
+'''
 
 # Give the lexer some input
 lexer.input(data)
@@ -176,11 +182,16 @@ outputFile = open('output.txt', 'w')
 
 output = ""
 
+print(lexer.token)
+
+
 # Tokenize
 while True:
     tok = lexer.token()
     if not tok: 
         break      # No more input
     output += str(tok) + "\n"
-
+print(output)
 outputFile.write(output)
+
+

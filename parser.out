@@ -1,0 +1,60 @@
+Created by PLY (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ASSIGNMENT
+    ASSIGNMENT_ADD
+    ASSIGNMENT_DIV
+    ASSIGNMENT_MUL
+    ASSIGNMENT_SUB
+    COMMA
+    DECIMAL
+    EQUAL
+    GREATER
+    LBRACE
+    LESS
+    RBRACE
+    SEMICOLON
+    UNARY_MINUS
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> expression PLUS term
+Rule 2     expression -> expression MINUS term
+Rule 3     expression -> expression TIMES term
+Rule 4     expression -> expression DIVIDE term
+Rule 5     expression -> term
+Rule 6     term -> NUMBER
+Rule 7     term -> LPAREN expression RPAREN
+
+Terminals, with rules where they appear
+
+ASSIGNMENT           : 
+ASSIGNMENT_ADD       : 
+ASSIGNMENT_DIV       : 
+ASSIGNMENT_MUL       : 
+ASSIGNMENT_SUB       : 
+COMMA                : 
+DECIMAL              : 
+DIVIDE               : 4
+EQUAL                : 
+GREATER              : 
+LBRACE               : 
+LESS                 : 
+LPAREN               : 7
+MINUS                : 2
+PLUS                 : 1
+RBRACE               : 
+RPAREN               : 7
+SEMICOLON            : 
+TIMES                : 3
+UNARY_MINUS          : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+NUMBER               : 6
+expression           : 1 2 3 4 7 0
+term                 : 1 2 3 4 5
+
